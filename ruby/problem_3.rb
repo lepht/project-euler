@@ -3,7 +3,7 @@ class Integer
         if self == 1
             return false
         else
-            (2...self).reverse_each { |n|
+            (2...self).each { |n|
                 return false if self % n == 0
             }
             return true
@@ -15,8 +15,8 @@ class Integer
     end
 
     def largest_prime_factor
-        (2...Math.sqrt(self)).reverse_each { |n|
-            if self.factor? n && n.prime?
+        (2..Math.sqrt(self)).reverse_each { |n|
+            if self.factor?(n) && n.prime?
                 return n
             end
         }
